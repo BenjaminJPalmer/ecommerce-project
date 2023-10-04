@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Rewrite requests to remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+
+# Rewrite requests for the API
+RewriteRule ^api/products/?$ api/products.php [L]
+RewriteRule ^api/products/(\d+)/?$ api/products.php?id=$1 [L,QSA]
+RewriteRule ^api/product-categories/?$ api/product-categories.php [L]
+RewriteRule ^api/product-categories/(\d+)/?$ api/product-categories.php?id=$1 [L,QSA]
+
+RewriteRule ^product/?$ product.html [L]
+RewriteRule ^category/?$ category.html [L]

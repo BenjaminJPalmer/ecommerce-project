@@ -1,0 +1,24 @@
+// Import relevant Google fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+// Colors
+$primary-color: #04adef;
+$secondary-color: #ec6a01;
+$tertiary-color: #eb008c;
+$background-color: #f2f2f2;
+$text-color: #333;
+$soft-text-color: #666;
+$reverse-text-color: #fff;
+
+// Fonts
+$font-family: "Poppins", sans-serif;
+
+// Screen sizes
+$mobile: 320px;
+$tablet: 768px;
+$desktopSmall: 1024px;
+$desktop: 1440px;
+
+// Other variables
+$base-padding: 10px;
+$container: 2rem 10%;

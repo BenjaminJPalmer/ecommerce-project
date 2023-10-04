@@ -1,0 +1,33 @@
+footer {
+  background-color: $tertiary-color;
+  font-family: $font-family;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 60px;
+
+  .copyright {
+    color: $reverse-text-color;
+  }
+
+  a {
+    color: $reverse-text-color;
+    text-decoration: none;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .logo {
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+}

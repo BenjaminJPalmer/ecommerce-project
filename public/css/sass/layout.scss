@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  font-family: $font-family;
+
+  .intro {
+    margin: $container;
+
+    .welcome-heading {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 20px;
+    }
+
+    .welcome-paragraph {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5rem;
+      padding: 20px;
+    }
+  }
+
+  .product-listing,
+  .category-listing {
+    margin: $container;
+
+    h3 {
+      font-size: 22px;
+      font-weight: 600;
+      padding: 20px 0;
+    }
+  }
+}
