@@ -7,6 +7,30 @@
       <p class="sidebar-info-details">Scroll down to view your total summary and proceed to checkout</p>
     </div>
     <div id="cart-container" class="cart-container"></div>
+    <div id="total-container" class="total-container">
+      <table id="totals" class="totals">
+        <tr>
+          <td>Sub-total</td>
+          <td id="totals__sub-total" class="totals__sub-total"></td>
+        </tr>
+        <tr>
+          <td>Total quantity</td>
+          <td id="totals__quantity" class="totals__quantity"></td>
+        </tr>
+        <tr>
+          <td>Total weight</td>
+          <td id="totals__weight" class="totals__weight"></td>
+        </tr>
+        <tr>
+          <td>Delivery cost</td>
+          <td id="totals__delivery" class="totals__delivery"></td>
+        </tr>
+        <tr>
+          <td>Total cost</td>
+          <td id="totals__total" class="totals__total"></td>
+        </tr>
+      </table>
+    </div>
     <div class="sidebar-buttons">
       <div class="checkout"><button class="checkout-button"><a href="/ecommerce-project/checkout">Checkout</a></button>
       </div>

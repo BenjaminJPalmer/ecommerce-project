@@ -115,27 +115,15 @@
       padding: 10px;
     }
 
+    h3 {
+      font-size: 18px;
+      text-align: center;
+      padding: 10px;
+    }
+
     p {
       text-align: center;
       padding: 10px 0 20px 0;
-    }
-
-    table {
-      table-layout: fixed;
-      width: 75%;
-      border: 1px solid $soft-text-color;
-      text-align: center;
-      font-size: 14px;
-
-      td {
-        padding: 10px;
-        border: 1px solid $soft-text-color;
-      }
-
-      th {
-        @extend td;
-        background-color: $background-color;
-      }
     }
 
     .mix-products {
@@ -160,6 +148,24 @@
         .product-name {
           font-size: 14px;
         }
+      }
+    }
+
+    table {
+      table-layout: fixed;
+      width: 75%;
+      border: 1px solid $soft-text-color;
+      text-align: center;
+      font-size: 14px;
+
+      td {
+        padding: 10px;
+        border: 1px solid $soft-text-color;
+      }
+
+      th {
+        @extend td;
+        background-color: $background-color;
       }
     }
   }

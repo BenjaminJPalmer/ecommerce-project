@@ -1,5 +1,11 @@
 import { calculateUnitPrice, calculateWeight, calculateDeliveryPrice } from "./helpers.js";
 const clearCart = document.getElementById("clear-cart-button");
+const totalContainer = document.getElementById("total-container");
+const totalsSubTotal = document.getElementById("totals__sub-total");
+const totalsQuantity = document.getElementById("totals__quantity");
+const totalsWeight = document.getElementById("totals__weight");
+const totalsDelivery = document.getElementById("totals__delivery");
+const totalsTotal = document.getElementById("totals__total");
 
 // Handle the operation for opening and closing the cart sidebar
 document.addEventListener("DOMContentLoaded", () => {
@@ -96,40 +102,16 @@ export const clearAndPopulateCart = () => {
     totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2);
     const deliveryPriceValue = calculateDeliveryPrice(totalWeight);
 
-    const total = document.createElement("div");
-    total.classList.add("cart-total");
-
-    const cartTotalPrice = document.createElement("p");
-    cartTotalPrice.classList.add("cart-total-price");
-    cartTotalPrice.textContent = `Sub-total: £${totalPrice}`;
-
-    const cartTotalQuantity = document.createElement("p");
-    cartTotalQuantity.classList.add("cart-total-quantity");
-    cartTotalQuantity.textContent = `Total number of sweets: ${totalQuantity}`;
-
-    const cartTotalWeight = document.createElement("p");
-    cartTotalWeight.classList.add("cart-total-weight");
-    cartTotalWeight.textContent = `Total order weight: ${totalWeight.toFixed(2)}g`;
-
-    const deliveryPrice = document.createElement("p");
-    deliveryPrice.classList.add("cart-total-delivery");
-    deliveryPrice.textContent = deliveryPriceValue
-      ? `Delivery price: ${deliveryPriceValue.toFixed(2)}`
+    totalsSubTotal.textContent = `£${totalPrice}`;
+    totalsQuantity.textContent = `${totalQuantity}`;
+    totalsWeight.textContent = `${totalWeight.toFixed(2)}g`;
+    totalsDelivery.textContent = deliveryPriceValue
+      ? `£${deliveryPriceValue.toFixed(2)}`
       : "Your order must be over 40g";
 
-    const finalCost = document.createElement("p");
-    finalCost.classList.add("cart-total-final");
-    finalCost.textContent = deliveryPriceValue
+    totalsTotal.textContent = deliveryPriceValue
       ? `£${(rawTotalPrice + deliveryPriceValue).toFixed(2)}`
       : "";
-
-    total.appendChild(cartTotalPrice);
-    total.appendChild(cartTotalQuantity);
-    total.appendChild(cartTotalWeight);
-    total.appendChild(deliveryPrice);
-    total.appendChild(finalCost);
-
-    cartContainer.appendChild(total);
   } else {
     cartContainer.innerHTML = "";
     const cartEmpty = document.createElement("p");

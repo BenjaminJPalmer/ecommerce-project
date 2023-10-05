@@ -17,7 +17,11 @@ require_once 'templates/header.php';
       </div>
     </div>
     <div class="mix-info">
-      <h2>Choose your pick 'n' mix</h2>
+      <h2>Time to treat someone special?</h2>
+      <h3>Click the sweet icons below and then adjust the quantity of sweets using the inputs under the image to the
+        left.</h3>
+      <div id="mix-products" class="mix-products"></div>
+      <h2>Delivery Information</h2>
       <p>The minimum order size is 40 grams. Delivery cost is based on the total weight of your order.</p>
       <table>
         <thead>
@@ -41,7 +45,6 @@ require_once 'templates/header.php';
           </tr>
         </tbody>
       </table>
-      <div id="mix-products" class="mix-products"></div>
     </div>
   </div>
 </div>

@@ -253,23 +253,14 @@ main .category-listing h3 {
   font-weight: 600;
   padding: 10px;
 }
+.mix-container .mix-info h3 {
+  font-size: 18px;
+  text-align: center;
+  padding: 10px;
+}
 .mix-container .mix-info p {
   text-align: center;
   padding: 10px 0 20px 0;
-}
-.mix-container .mix-info table {
-  table-layout: fixed;
-  width: 75%;
-  border: 1px solid #666;
-  text-align: center;
-  font-size: 14px;
-}
-.mix-container .mix-info table td, .mix-container .mix-info table th {
-  padding: 10px;
-  border: 1px solid #666;
-}
-.mix-container .mix-info table th {
-  background-color: #f2f2f2;
 }
 .mix-container .mix-info .mix-products {
   display: grid;
@@ -291,6 +282,20 @@ main .category-listing h3 {
 }
 .mix-container .mix-info .mix-products .product .product-name {
   font-size: 14px;
+}
+.mix-container .mix-info table {
+  table-layout: fixed;
+  width: 75%;
+  border: 1px solid #666;
+  text-align: center;
+  font-size: 14px;
+}
+.mix-container .mix-info table td, .mix-container .mix-info table th {
+  padding: 10px;
+  border: 1px solid #666;
+}
+.mix-container .mix-info table th {
+  background-color: #f2f2f2;
 }
 
 .category-container {
