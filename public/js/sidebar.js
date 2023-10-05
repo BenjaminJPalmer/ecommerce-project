@@ -2,14 +2,9 @@ import { calculateUnitPrice, calculateWeight, calculateDeliveryPrice } from "./h
 
 // Handle the operation for opening and closing the cart sidebar
 document.addEventListener("DOMContentLoaded", () => {
-  const showSidebarButton = document.getElementById("show-sidebar");
   const cartIcon = document.getElementById("cart-icon");
   const closeSidebarButton = document.getElementById("close-sidebar");
   const sidebar = document.getElementById("sidebar");
-
-  showSidebarButton.addEventListener("click", () => {
-    sidebar.classList.add("open");
-  });
 
   cartIcon.addEventListener("click", () => {
     sidebar.classList.add("open");
@@ -19,16 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.remove("open");
   });
 
-  window.addEventListener("click", function (event) {
-    if (
-      sidebar.classList.contains("open") &&
-      event.target !== sidebar &&
-      event.target !== showSidebarButton &&
-      event.target !== cartIcon
-    ) {
-      sidebar.classList.remove("open");
-    }
-  });
+  clearAndPopulateCart();
 });
 
 export const clearAndPopulateCart = () => {

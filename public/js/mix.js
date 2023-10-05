@@ -64,7 +64,7 @@ fetch("http://localhost:8888/ecommerce-project/api/products?category=1")
           imageLink: sweet.image_link,
         };
 
-        updateQuantity(sweet.name, cartProduct);
+        // updateQuantity(sweet.name, cartProduct);
         first = false;
       }
 
@@ -133,4 +133,13 @@ plusButton.addEventListener("click", () => {
   cart[productName].quantity++; // Increment quantity
   localStorage.setItem("cart", JSON.stringify(cart));
   updateQuantity(productName, cart[productName]);
+});
+
+// Add event listener for the show sidebar / view cart button
+document.addEventListener("DOMContentLoaded", () => {
+  const showSidebarButton = document.getElementById("show-sidebar");
+
+  showSidebarButton.addEventListener("click", () => {
+    sidebar.classList.add("open");
+  });
 });
