@@ -293,6 +293,54 @@ main .category-listing h3 {
   font-size: 14px;
 }
 
+.product-container {
+  padding: 2rem 10%;
+}
+.product-container .product-single {
+  display: flex;
+  justify-content: space-evenly;
+}
+.product-container .product-single__image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  max-width: 400px;
+}
+.product-container .product-single__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 40px;
+  max-width: 500px;
+}
+.product-container .product-single .product-single__example, .product-container .product-single .product-single__weight, .product-container .product-single .product-single__price, .product-container .product-single .product-single__description, .product-container .product-single .product-single__title {
+  padding: 10px;
+}
+.product-container .product-single__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+.product-container .product-single__mix {
+  margin: 10px 0 0 10px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ec6a01;
+  border-radius: 5px;
+  width: 12rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.product-container .product-single__mix:hover {
+  background-color: #b95301;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
 header {
   display: flex;
   flex-direction: column;

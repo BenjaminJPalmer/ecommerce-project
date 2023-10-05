@@ -2,7 +2,6 @@ import { clearAndPopulateCart } from "./sidebar.js";
 
 const productContainer = document.getElementById("mix-products");
 const currentImage = document.getElementById("current-image");
-const quantityContainer = document.getElementById("quantity-container");
 const quantityInput = document.getElementById("quantity-input");
 const minusButton = document.getElementById("minus-button");
 const plusButton = document.getElementById("plus-button");
@@ -64,7 +63,7 @@ fetch("http://localhost:8888/ecommerce-project/api/products?category=1")
           imageLink: sweet.image_link,
         };
 
-        // updateQuantity(sweet.name, cartProduct);
+        updateQuantity(sweet.name, cartProduct); // Keep to make sure input dispalys correct value
         first = false;
       }
 

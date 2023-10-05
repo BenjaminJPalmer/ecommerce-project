@@ -1,6 +1,15 @@
+import { calculateUnitPrice } from "./helpers.js";
+
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
-const productDetails = document.getElementById("product-details");
+const productSingleImage = document.getElementById("product-single__image");
+const productSingleTitle = document.getElementById("product-single__title");
+const productSingleDescription = document.getElementById("product-single__description");
+const productSinglePrice = document.getElementById("product-single__price");
+const productSingleWeight = document.getElementById("product-single__weight");
+const productSingleExample = document.getElementById("product-single__example");
+const mixButton = document.getElementById("product-single__mix");
+const noProductMessage = document.getElementById("no-product-message");
 
 // Check if a product ID is present in the URL
 if (productId) {
@@ -9,33 +18,19 @@ if (productId) {
     .then((response) => response.json())
     .then((product) => {
       if (product.error) {
-        productDetails.textContent = `Error: ${product.error}`;
+        mixButton.style.display = "none";
+        noProductMessage.textContent = `Error: ${product.error}. Please contact your administrator.`;
       } else {
-        const card = document.createElement("div");
-        card.classList.add("product-card");
-        const cardLink = document.createElement("a");
-        cardLink.href = `http://localhost:8888/ecommerce-project/product?id=${product.id}`;
-        const title = document.createElement("h4");
-        title.classList.add("product-title");
-        const description = document.createElement("p");
-        description.classList.add("product-description");
-        const image = document.createElement("img");
-        image.classList.add("product-image");
-
-        card.setAttribute("id", `product-${product.id}`);
-        title.textContent = product.name;
-        description.textContent = product.description;
-        image.src = product.image_link
+        const calculatedPrice = calculateUnitPrice(100, product.price_per_gram, product.weight);
+        productSingleTitle.textContent = product.name;
+        productSingleDescription.textContent = product.description;
+        productSingleImage.src = product.image_link
           ? product.image_link
           : "/ecommerce-project/public/images/logo.png/";
-        image.alt = `A picture of ${product.name} sweets`;
-
-        card.appendChild(cardLink);
-        cardLink.appendChild(title);
-        cardLink.appendChild(description);
-        cardLink.appendChild(image);
-
-        productDetails.appendChild(card);
+        productSinglePrice.textContent = `Price per gram: £${product.price_per_gram / 100}`;
+        productSingleWeight.textContent = `Weight per sweet: ${product.weight}g`;
+        productSingleExample.textContent = `For example, if you purchase 100 ${product.name} sweets, the total cost will be: £${calculatedPrice}`;
+        productSingleImage.alt = `A picture of ${product.name} sweets`;
       }
     })
     .catch((error) => {
@@ -43,5 +38,6 @@ if (productId) {
     });
 } else {
   // Handle the case when no product ID is provided
-  productDetails.textContent = "Product ID is missing in the URL.";
+  mixButton.style.display = "none";
+  noProductMessage.textContent = "Please add a product ID to the URL in the format 'product?id=1'.";
 }
