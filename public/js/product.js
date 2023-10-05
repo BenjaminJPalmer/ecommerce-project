@@ -24,13 +24,11 @@ if (productId) {
         const calculatedPrice = calculateUnitPrice(100, product.price_per_gram, product.weight);
         productSingleTitle.textContent = product.name;
         productSingleDescription.textContent = product.description;
-        productSingleImage.src = product.image_link
-          ? product.image_link
-          : "/ecommerce-project/public/images/logo.png/";
+        productSingleImage.src = product.image_link ? product.image_link : "public/images/logo.png";
+        productSingleImage.alt = `A picture of ${product.name} sweets`;
         productSinglePrice.textContent = `Price per gram: £${product.price_per_gram / 100}`;
         productSingleWeight.textContent = `Weight per sweet: ${product.weight}g`;
         productSingleExample.textContent = `For example, if you purchase 100 ${product.name} sweets, the total cost will be: £${calculatedPrice}`;
-        productSingleImage.alt = `A picture of ${product.name} sweets`;
       }
     })
     .catch((error) => {

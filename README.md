@@ -11,6 +11,4 @@ The PHP version being used is `8.2.0`.
 Styling has been done with SCSS to make use of nesting and additional functionality such as `@extend`. All `.scss` files are imported into `main.scss`. If a new stylesheet is added, the relevant import statement will need to be added to this main file. You can generate the `.css` stylesheet used in the project by running `sass public/css/sass/main.scss public/css/styles.css` in the root of the project.
 
 TODO: Add seeder
-TODO: Build product view
-TODO: Build category view
 TODO: Build checkout view
