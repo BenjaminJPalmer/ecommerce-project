@@ -125,8 +125,11 @@ export const clearAndPopulateCart = () => {
 
     cartContainer.appendChild(total);
   } else {
-    // TODO: Add a nicer message if the cart is empty
     cartContainer.innerHTML = "";
-    cartContainer.textContent = "You have nothing in your cart.";
+    const cartEmpty = document.createElement("p");
+    cartEmpty.classList.add("cart-empty");
+    cartEmpty.textContent = "You have nothing in your cart.";
+
+    cartContainer.appendChild(cartEmpty);
   }
 };
