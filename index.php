@@ -31,7 +31,7 @@ require_once 'templates/header.php';
 	<div id="categories-container" class="categories-container"></div>
 </div>
 
-<script src="public/js/index.js"></script>
+<script src="public/js/index.js" type="module"></script>
 
 <?php
 // Include the footer template

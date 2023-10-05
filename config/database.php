@@ -3,7 +3,7 @@
 $host = 'localhost';
 $dbname = 'ecommerce_site';
 $user = 'root';
-$password = ''; // MAMP = 'root', XAMPP = ''
+$password = 'root'; // MAMP = 'root', XAMPP = ''
 
 try {
   $pdo = new PDO("mysql:host=$host;", $user, $password);
@@ -14,13 +14,13 @@ try {
   $stmt->bindParam(":dbname", $dbname, PDO::PARAM_STR);
   $stmt->execute();
 
-  if(!$stmt->fetch(PDO::FETCH_ASSOC)) {
+  if (!$stmt->fetch(PDO::FETCH_ASSOC)) {
     // Create the datbase if it doesn't exist
     $pdo->exec("CREATE DATABASE $dbname");
   }
 
   $pdo->exec("USE $dbname");
-  
+
 } catch (PDOException $e) {
   die("Error: " . $e->getMessage());
 }

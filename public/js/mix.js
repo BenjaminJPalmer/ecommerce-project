@@ -28,7 +28,7 @@ function updateQuantity(productName, cartProduct) {
 }
 
 // Fetch the products that have the sweet category
-fetch("http://localhost/ecommerce-project/api/products?category=1")
+fetch(`/ecommerce-project/api/products?category=1`)
   .then((response) => response.json())
   .then((data) => {
     data.map((sweet) => {

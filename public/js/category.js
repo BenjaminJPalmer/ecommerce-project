@@ -1,5 +1,3 @@
-import { calculateUnitPrice } from "./helpers.js";
-
 const urlParams = new URLSearchParams(window.location.search);
 const categoryId = urlParams.get("id");
 const categorySingleImage = document.getElementById("category-single__image");
@@ -11,7 +9,7 @@ const noCategoryMessage = document.getElementById("no-category-message");
 // Check if a category ID is present in the URL
 if (categoryId) {
   // Make a GET request to your API endpoint
-  fetch(`http://localhost/ecommerce-project/api/product-categories/${categoryId}`)
+  fetch(`/ecommerce-project/api/product-categories/${categoryId}`)
     .then((response) => response.json())
     .then((category) => {
       if (category.error) {
