@@ -1,4 +1,5 @@
 import { calculateUnitPrice, calculateWeight, calculateDeliveryPrice } from "./helpers.js";
+const checkoutLink = document.getElementById("checkout-link");
 const clearCart = document.getElementById("clear-cart-button");
 const totalContainer = document.getElementById("total-container");
 const totalsSubTotal = document.getElementById("totals__sub-total");
@@ -38,6 +39,7 @@ export const clearAndPopulateCart = () => {
   let totalWeight = 0;
 
   cartContainer.innerHTML = "";
+  totalContainer.style.display = "block";
 
   if (cartJSON) {
     // Parse the JSON into a JavaScript object
@@ -101,19 +103,27 @@ export const clearAndPopulateCart = () => {
     const rawTotalPrice = totalPrice;
     totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2);
     const deliveryPriceValue = calculateDeliveryPrice(totalWeight);
+    const errorMessage = "Your order must be over 40g";
 
     totalsSubTotal.textContent = `£${totalPrice}`;
     totalsQuantity.textContent = `${totalQuantity}`;
     totalsWeight.textContent = `${totalWeight.toFixed(2)}g`;
     totalsDelivery.textContent = deliveryPriceValue
       ? `£${deliveryPriceValue.toFixed(2)}`
-      : "Your order must be over 40g";
+      : errorMessage;
 
     totalsTotal.textContent = deliveryPriceValue
       ? `£${(rawTotalPrice + deliveryPriceValue).toFixed(2)}`
-      : "";
+      : errorMessage;
+
+    if (!(totalsTotal.textContent == errorMessage)) {
+      checkoutLink.setAttribute("href", "/ecommerce-project/checkout");
+    } else {
+      checkoutLink.setAttribute("href", "javascript:void(0)");
+    }
   } else {
     cartContainer.innerHTML = "";
+    totalContainer.style.display = "none";
     const cartEmpty = document.createElement("p");
     cartEmpty.classList.add("cart-empty");
     cartEmpty.textContent = "You have nothing in your cart.";

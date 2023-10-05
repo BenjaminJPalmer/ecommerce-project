@@ -32,7 +32,7 @@
       </table>
     </div>
     <div class="sidebar-buttons">
-      <div class="checkout"><button class="checkout-button"><a href="/ecommerce-project/checkout">Checkout</a></button>
+      <div class="checkout"><button class="checkout-button"><a id="checkout-link" href="">Checkout</a></button>
       </div>
       <div class="clear-cart"><button id="clear-cart-button" class="clear-cart-button">Clear Cart</button></div>
     </div>

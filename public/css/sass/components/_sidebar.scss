@@ -96,6 +96,34 @@
       }
     }
 
+    .total-container {
+      width: 100%;
+
+      .totals {
+        width: 100%;
+        border: 1px solid $soft-text-color;
+        border-left: none;
+        border-right: none;
+        border-collapse: collapse;
+
+        td {
+          @extend .totals;
+          padding: 20px;
+          width: 50%;
+          text-align: center;
+          font-weight: 600;
+        }
+
+        &__sub-total,
+        &__quantity,
+        &__weight,
+        &__delivery,
+        &__total {
+          color: $primary-color;
+        }
+      }
+    }
+
     .sidebar-buttons {
       display: flex;
       gap: 10px;

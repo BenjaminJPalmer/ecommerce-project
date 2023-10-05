@@ -693,6 +693,25 @@ footer .logo img {
   align-items: center;
   padding: 10px;
 }
+.sidebar .sidebar-inner .total-container {
+  width: 100%;
+}
+.sidebar .sidebar-inner .total-container .totals, .sidebar .sidebar-inner .total-container .totals td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th {
+  width: 100%;
+  border: 1px solid #666;
+  border-left: none;
+  border-right: none;
+  border-collapse: collapse;
+}
+.sidebar .sidebar-inner .total-container .totals td, .sidebar .sidebar-inner .total-container .totals td td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th td, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th {
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+  font-weight: 600;
+}
+.sidebar .sidebar-inner .total-container .totals__sub-total, .sidebar .sidebar-inner .total-container .totals__quantity, .sidebar .sidebar-inner .total-container .totals__weight, .sidebar .sidebar-inner .total-container .totals__delivery, .sidebar .sidebar-inner .total-container .totals__total {
+  color: #04adef;
+}
 .sidebar .sidebar-inner .sidebar-buttons {
   display: flex;
   gap: 10px;
