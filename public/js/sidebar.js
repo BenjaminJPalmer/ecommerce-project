@@ -1,4 +1,9 @@
-import { calculateUnitPrice, calculateWeight, calculateDeliveryPrice } from "./helpers.js";
+import {
+  calculateUnitPrice,
+  calculateWeight,
+  calculateDeliveryPrice,
+  roundTwoDecimals,
+} from "./helpers.js";
 const checkoutLink = document.getElementById("checkout-link");
 const clearCart = document.getElementById("clear-cart-button");
 const totalContainer = document.getElementById("total-container");
@@ -101,7 +106,7 @@ export const clearAndPopulateCart = () => {
     }
 
     const rawTotalPrice = totalPrice;
-    totalPrice = (Math.round(totalPrice * 100) / 100).toFixed(2);
+    totalPrice = roundTwoDecimals(totalPrice);
     const deliveryPriceValue = calculateDeliveryPrice(totalWeight);
     const errorMessage = "Your order must be over 40g";
 

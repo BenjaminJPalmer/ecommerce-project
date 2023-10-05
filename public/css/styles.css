@@ -48,6 +48,7 @@ thead,
 tr,
 th,
 td,
+.checkout-container .checkout-details table th,
 .mix-container .mix-info table th,
 main,
 canvas,
@@ -108,6 +109,23 @@ input {
   -webkit-appearance: none;
   appearance: none;
   border-radius: 0;
+}
+
+.sidebar .sidebar-inner .clear-cart-button, .sidebar .sidebar-inner .checkout-button, .checkout-container .checkout-details .no-items-container .home-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  background-color: #04adef;
+  color: #fff;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.sidebar .sidebar-inner .clear-cart-button:hover, .sidebar .sidebar-inner .checkout-button:hover, .checkout-container .checkout-details .no-items-container .home-link:hover {
+  background-color: #b95301;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -290,7 +308,7 @@ main .category-listing h3 {
   text-align: center;
   font-size: 14px;
 }
-.mix-container .mix-info table td, .mix-container .mix-info table th {
+.mix-container .mix-info table td, .mix-container .mix-info .checkout-container .checkout-details table th, .checkout-container .checkout-details .mix-container .mix-info table th, .mix-container .mix-info table th {
   padding: 10px;
   border: 1px solid #666;
 }
@@ -392,6 +410,77 @@ main .category-listing h3 {
 .product-container .product-single__mix:hover {
   background-color: #b95301;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.checkout-container {
+  padding: 2rem 10%;
+}
+.checkout-container h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.checkout-container .checkout-details, .checkout-container .checkout-details table {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+.checkout-container .checkout-details table {
+  border-right: 1px solid #666;
+}
+.checkout-container .checkout-details table td, .checkout-container .checkout-details table th, .checkout-container .checkout-details .mix-container .mix-info table th, .mix-container .mix-info .checkout-container .checkout-details table th {
+  padding: 10px;
+  border-left: 1px solid #666;
+}
+.checkout-container .checkout-details table:last-child {
+  border-right: 1px solid #666;
+}
+.checkout-container .checkout-details table th {
+  background-color: #f2f2f2;
+  color: #04adef;
+  font-weight: 600;
+}
+.checkout-container .checkout-details table thead,
+.checkout-container .checkout-details table tfoot {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+.checkout-container .checkout-details .no-items-container {
+  max-width: 400px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-container .checkout-details .no-items-container .no-items {
+  padding-bottom: 20px;
+}
+.checkout-container .checkout-details .no-items-container .home-link {
+  text-decoration: none;
+  padding: 10px;
+  width: 250px;
+}
+.checkout-container .checkout-details .no-items-container .home-link:hover {
+  background-color: #0389bd;
+}
+.checkout-container .checkout-delivery {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 0;
+}
+.checkout-container .checkout-delivery h2 {
+  text-align: left;
+}
+.checkout-container .checkout-delivery h3 {
+  font-size: 22px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+.checkout-container .checkout-delivery h3 span {
+  color: #04adef;
 }
 
 header {
@@ -696,14 +785,14 @@ footer .logo img {
 .sidebar .sidebar-inner .total-container {
   width: 100%;
 }
-.sidebar .sidebar-inner .total-container .totals, .sidebar .sidebar-inner .total-container .totals td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th {
+.sidebar .sidebar-inner .total-container .totals, .sidebar .sidebar-inner .total-container .totals td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th, .sidebar .sidebar-inner .total-container .totals .checkout-container .checkout-details table th, .checkout-container .checkout-details table .sidebar .sidebar-inner .total-container .totals th {
   width: 100%;
   border: 1px solid #666;
   border-left: none;
   border-right: none;
   border-collapse: collapse;
 }
-.sidebar .sidebar-inner .total-container .totals td, .sidebar .sidebar-inner .total-container .totals td td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th td, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th {
+.sidebar .sidebar-inner .total-container .totals td, .sidebar .sidebar-inner .total-container .totals td td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th td, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th td, .sidebar .sidebar-inner .total-container .totals .checkout-container .checkout-details table th td, .checkout-container .checkout-details table .sidebar .sidebar-inner .total-container .totals th td, .sidebar .sidebar-inner .total-container .totals .mix-container .mix-info table th, .mix-container .mix-info table .sidebar .sidebar-inner .total-container .totals th, .sidebar .sidebar-inner .total-container .totals .checkout-container .checkout-details table th, .checkout-container .checkout-details table .sidebar .sidebar-inner .total-container .totals th {
   padding: 20px;
   width: 50%;
   text-align: center;
@@ -717,19 +806,8 @@ footer .logo img {
   gap: 10px;
   padding: 20px;
 }
-.sidebar .sidebar-inner .clear-cart-button, .sidebar .sidebar-inner .checkout-button {
-  font-family: "Poppins", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  background-color: #04adef;
-  color: #fff;
-  width: 10rem;
-  height: 3rem;
-  border: none;
-  border-radius: 50px;
-}
-.sidebar .sidebar-inner .checkout-button {
-  cursor: pointer;
+.sidebar .sidebar-inner .checkout-button:hover {
+  background-color: #0389bd;
 }
 .sidebar .sidebar-inner .checkout-button a {
   text-decoration: none;
@@ -737,7 +815,9 @@ footer .logo img {
 }
 .sidebar .sidebar-inner .clear-cart-button {
   background-color: #eb008c;
-  cursor: pointer;
+}
+.sidebar .sidebar-inner .clear-cart-button:hover {
+  background-color: #b8006e;
 }
 
 /*# sourceMappingURL=styles.css.map */

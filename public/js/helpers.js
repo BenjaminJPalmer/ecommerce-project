@@ -30,3 +30,8 @@ export const calculateDeliveryPrice = (weight) => {
   }
   return deliveryPrice;
 };
+
+export const roundTwoDecimals = (value) => {
+  const roundedValue = (Math.round(value * 100) / 100).toFixed(2);
+  return roundedValue;
+};
