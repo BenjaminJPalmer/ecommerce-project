@@ -16,7 +16,7 @@ require_once 'templates/header.php';
 
 <div class="feature-banner">
 	<div class="overlay">
-		<h3>Check out our new pick 'n' mix calculator!</h3>
+		<h3>Treat your <span>loved ones</span> to something from our new pick 'n' mix calculator!</h3>
 		<a href="/ecommerce-project/mix">Mix Here</a>
 	</div>
 </div>

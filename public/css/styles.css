@@ -576,9 +576,16 @@ footer .logo img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .feature-banner .overlay h3 {
   padding: 20px;
+}
+.feature-banner .overlay h3 span {
+  font-size: 36px;
+  font-weight: 600;
+  color: #eb008c;
+  -webkit-text-stroke: 1px white; /* Text outline color and width */
 }
 .feature-banner .overlay a {
   text-decoration: none;

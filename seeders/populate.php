@@ -68,12 +68,12 @@ $products = [
 ];
 
 try {
+  echo "Connected to the database.\n";
   // SQL schema script filename
   $schemaScript = 'seeders\schema.sql';
 
   // Check if the schema script file exists
   if (file_exists($schemaScript)) {
-    echo "Connected to the database.\n";
     // Read the contents of the schema script
     $schemaSQL = file_get_contents($schemaScript);
 
