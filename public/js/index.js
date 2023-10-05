@@ -1,7 +1,7 @@
 const productsContainer = document.getElementById("products-container");
 const categoriesContainer = document.getElementById("categories-container");
 
-fetch("http://localhost:8888/ecommerce-project/api/products?limit=3")
+fetch("http://localhost/ecommerce-project/api/products?limit=3")
   .then((response) => response.json())
   .then((products) => {
     if (products.error) {
@@ -11,7 +11,7 @@ fetch("http://localhost:8888/ecommerce-project/api/products?limit=3")
         const card = document.createElement("div");
         card.classList.add("product-card");
         const cardLink = document.createElement("a");
-        cardLink.href = `http://localhost:8888/ecommerce-project/product?id=${product.id}`;
+        cardLink.href = `http://localhost/ecommerce-project/product?id=${product.id}`;
         const title = document.createElement("h4");
         title.classList.add("product-title");
         const description = document.createElement("p");
@@ -40,7 +40,7 @@ fetch("http://localhost:8888/ecommerce-project/api/products?limit=3")
     console.error("Error fetching product data:", error);
   });
 
-fetch("http://localhost:8888/ecommerce-project/api/product-categories?limit=3")
+fetch("http://localhost/ecommerce-project/api/product-categories?limit=3")
   .then((response) => response.json())
   .then((categories) => {
     if (categories.error) {
@@ -50,7 +50,7 @@ fetch("http://localhost:8888/ecommerce-project/api/product-categories?limit=3")
         const card = document.createElement("div");
         card.classList.add("category-card");
         const cardLink = document.createElement("a");
-        cardLink.href = `http://localhost:8888/ecommerce-project/category?id=${category.id}`;
+        cardLink.href = `http://localhost/ecommerce-project/category?id=${category.id}`;
         const title = document.createElement("h4");
         title.classList.add("category-title");
         const description = document.createElement("p");

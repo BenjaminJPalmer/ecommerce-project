@@ -1,3 +1,8 @@
+-- Crate the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS ecommerce_site;
+
+USE ecommerce_site;
+
 -- Create the product_categories table
 CREATE TABLE product_categories (
     id INT(11) NOT NULL AUTO_INCREMENT,

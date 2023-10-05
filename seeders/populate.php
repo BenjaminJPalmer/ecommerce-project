@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/database.php';
+require_once 'config\database.php';
 
 $productCategories = [
   ['name' => 'Sweets', 'description' => 'A selection of our finest sweets'],
@@ -68,12 +68,12 @@ $products = [
 ];
 
 try {
-
   // SQL schema script filename
-  $schemaScript = 'schema.sql';
+  $schemaScript = 'seeders\schema.sql';
 
   // Check if the schema script file exists
   if (file_exists($schemaScript)) {
+    echo "Connected to the database.\n";
     // Read the contents of the schema script
     $schemaSQL = file_get_contents($schemaScript);
 

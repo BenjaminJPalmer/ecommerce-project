@@ -14,7 +14,7 @@ const noProductMessage = document.getElementById("no-product-message");
 // Check if a product ID is present in the URL
 if (productId) {
   // Make a GET request to your API endpoint
-  fetch(`http://localhost:8888/ecommerce-project/api/products/${productId}`)
+  fetch(`http://localhost/ecommerce-project/api/products/${productId}`)
     .then((response) => response.json())
     .then((product) => {
       if (product.error) {
