@@ -3,10 +3,14 @@
   <div class="sidebar-inner">
     <div class="sidebar-info">
       <h3>Cart</h3>
-      <p>Here is your cart!</p>
-      <p>Scroll down to view your total summary and proceed to checkout</p>
+      <p class="sidebar-info-details">Here is your cart!</p>
+      <p class="sidebar-info-details">Scroll down to view your total summary and proceed to checkout</p>
     </div>
     <div id="cart-container" class="cart-container"></div>
-    <div class="checkout"><button class="checkout-button">Checkout</button></div>
+    <div class="sidebar-buttons">
+      <div class="checkout"><button class="checkout-button"><a href="/ecommerce-project/checkout">Checkout</a></button>
+      </div>
+      <div class="clear-cart"><button id="clear-cart-button" class="clear-cart-button">Clear Cart</button></div>
+    </div>
   </div>
 </div>

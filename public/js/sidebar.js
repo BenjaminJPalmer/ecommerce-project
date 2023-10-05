@@ -1,4 +1,5 @@
 import { calculateUnitPrice, calculateWeight, calculateDeliveryPrice } from "./helpers.js";
+const clearCart = document.getElementById("clear-cart-button");
 
 // Handle the operation for opening and closing the cart sidebar
 document.addEventListener("DOMContentLoaded", () => {
@@ -14,6 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.remove("open");
   });
 
+  clearAndPopulateCart();
+});
+
+clearCart.addEventListener("click", () => {
+  localStorage.removeItem("cart");
   clearAndPopulateCart();
 });
 
@@ -103,7 +109,7 @@ export const clearAndPopulateCart = () => {
 
     const cartTotalWeight = document.createElement("p");
     cartTotalWeight.classList.add("cart-total-weight");
-    cartTotalWeight.textContent = `Total order weight: ${totalWeight}g`;
+    cartTotalWeight.textContent = `Total order weight: ${totalWeight.toFixed(2)}g`;
 
     const deliveryPrice = document.createElement("p");
     deliveryPrice.classList.add("cart-total-delivery");
