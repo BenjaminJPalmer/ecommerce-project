@@ -15,7 +15,7 @@ try {
   $stmt->execute();
 
   if (!$stmt->fetch(PDO::FETCH_ASSOC)) {
-    // Create the datbase if it doesn't exist
+    // Create the database if it doesn't exist
     $pdo->exec("CREATE DATABASE $dbname");
   }
 
