@@ -1,5 +1,9 @@
 # Benjamin Palmer - Ecommerce Project SOFDEV03
 
+# Project Task Documents
+
+The two documents related to this project for the task can be found in the documents directory.
+
 ### Prerequisites
 
 - PHP 8.2.0
