@@ -40,7 +40,3 @@ If you would like sass to automatically update styles as you go, you can add the
 ```
 sass --watch public/css/sass/main.scss public/css/styles.css
 ```
-
-# Testing
-
-Check links are working properly via XAMPP on Windows.
