@@ -1,4 +1,4 @@
--- Crate the database if it doesn't exist
+-- Create the database if it doesn't exist
 CREATE DATABASE IF NOT EXISTS ecommerce_site;
 
 USE ecommerce_site;
