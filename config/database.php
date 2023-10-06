@@ -1,6 +1,6 @@
 <?php
 
-$host = 'localhost';
+$host = 'localhost'; // append port to hostname if required, e.g., :8888
 $dbname = 'ecommerce_site';
 $user = 'root';
 $password = 'root'; // MAMP = 'root', XAMPP = ''
