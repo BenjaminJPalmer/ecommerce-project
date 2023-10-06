@@ -7,6 +7,14 @@
 - [SASS](https://sass-lang.com/install/)
 - Local setup with mySQL and an Apache server, such as MAMP or XAMPP
 
+## Local setup
+
+If using a local server environment such as MAMP or XAMPP, simply put the unzipped project directory `ecommerce-project` into the `htdocs` directory within the relevant application directory and you will be able to access it at `localhost/ecommerce-project`. You may have to apend localhost with a specific port number, for instance for me using MAMP, my homepage is located at `localhost:8888/ecommerce-project`.
+
+```
+Applications/MAMP/htdocs/ecommerce-project
+```
+
 ## Database Information
 
 The database is a mySQL database on an Apache web server. The connection details can be found in `config/database.php`. You may have to adjust the username and password details here depending on your environment. I have mainly been working with MAMP for my local setup where the `root` user's password is 'root', however when testing on a Windows machine with XAMPP I noticed the `root` user's password is ''.
@@ -36,5 +44,3 @@ sass --watch public/css/sass/main.scss public/css/styles.css
 # Testing
 
 Check links are working properly via XAMPP on Windows.
-
-TODO: Build checkout view
